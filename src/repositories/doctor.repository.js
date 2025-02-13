@@ -1,5 +1,5 @@
 const {Doctor} = require('../models')
-const NotFound = require('../errors/notfound.error')
+const NotFound = require('../errors/notFound.error')
 
 class DoctorRepository{
     async getAllDoctors(){

@@ -1,3 +1,4 @@
 module.exports={
-    DoctorService : require('./doctor.service')
+    DoctorService : require('./doctor.service'),
+    UserService : require('./user.service')
 }

@@ -71,3 +71,10 @@ async function applyForRequests(req,res,next){
         next(error);
     }
 }
+
+module.exports ={
+    pingDoctorController,
+    getDoctors,
+    getDoctor,
+    applyForRequests
+};

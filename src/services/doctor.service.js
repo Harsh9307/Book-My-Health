@@ -1,3 +1,4 @@
+
 class DoctorService{
     constructor(doctorRepository){
         this.doctorRepository = doctorRepository;
@@ -22,5 +23,7 @@ class DoctorService{
         const newRequest = await this.doctorRepository.createDoctorRequest(userId);
         return newRequest;
     }
+
+    
 }
 module.exports = DoctorService;
