@@ -9,7 +9,8 @@ class AppointmentService {
    * @returns {Object} Appointment
    */
   async bookAppointment(appointmentData) {
-    return await this.appointmentRepository.create(appointmentData);
+    const bookAppointment = await this.appointmentRepository.bookAppointment(appointmentData);
+    return bookAppointment;
   }
 
   /**

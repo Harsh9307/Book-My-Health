@@ -4,15 +4,16 @@ const NotFound = require('../errors/notFound.error')
 class DoctorRepository{
     async getAllDoctors(){
         try{
-            let doctors;
-            if(!req.locals){
-                doctors = await Doctor.find({ isDoctor: true }).populate("userId");
-            }
-            else{
-                doctors= await Doctor.find({isDoctor:true}).find({
-                    _id: { $ne: req.locals },
-                  }).populate("userId");
-            }
+            // let doctors;
+            // if(!req.locals){
+            //     doctors = await Doctor.find({ isDoctor: true }).populate("userId");
+            // }
+            // else{
+            //     doctors= await Doctor.find({isDoctor:true}).find({
+            //         _id: { $ne: req.locals },
+            //       }).populate("userId");
+            // }
+            const doctors = await Doctor.find({ isDoctor: true }).populate("userId");
             return doctors;
         }
         catch(error){
@@ -23,7 +24,7 @@ class DoctorRepository{
 
     async getDoctor(id){
         try{
-            const doctor = await Doctor.find(id);
+            const doctor = await Doctor.findById(id);
             if(!doctor){
                 throw new NotFound("Doctor",id);
             }
@@ -36,7 +37,7 @@ class DoctorRepository{
     }
 
     async findRequestByUserId(userId) {
-        return await DoctorRequest.findOne({ userId });
+        return await ApprovalRequest.findOne({ userId });
     }
     
     async createDoctorRequest(userId) {

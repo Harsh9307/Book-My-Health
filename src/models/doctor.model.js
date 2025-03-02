@@ -54,6 +54,10 @@ const doctorSchema = new mongoose.Schema(
       enum: ["pending", "approved", "rejected"],
       default: "pending",
     },
+    isDoctor:{
+      type:Boolean,
+      default:true
+    }
   },
   {
     timestamps: true, // Automatically adds createdAt and updatedAt

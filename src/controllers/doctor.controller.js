@@ -8,7 +8,7 @@ function pingDoctorController(req,res){
     return res.json({message:'Doctor Contoller is up'});
 }
 
-async function getDoctors(req,res,next){
+async function getAllDoctors(req,res,next){
     try{
         const doctors = await doctorService.getAllDoctors();
         return res.status(StatusCodes.OK).json({
@@ -74,7 +74,7 @@ async function applyForRequests(req,res,next){
 
 module.exports ={
     pingDoctorController,
-    getDoctors,
+    getAllDoctors,
     getDoctor,
     applyForRequests
 };

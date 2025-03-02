@@ -7,8 +7,20 @@ class AppointmentRepository {
      * @param   {Object} appointmentData - { doctorId, patientId, date, time }
      * @returns {Object} Created Appointment
      */
-    async create(appointmentData) {
-        return await Appointment.create(appointmentData);
+    async bookAppointment(appointmentData) {
+        try{
+            const appointment = await Appointment.create({
+                patientId:appointmentData.patientId,
+                doctorId:appointmentData.doctorId,
+                date:appointmentData.date,
+                time:appointmentData.time,
+            })
+            return appointment;
+        }
+        catch(error){
+            console.log(error);
+            throw error;
+        }
     }
 
     /**

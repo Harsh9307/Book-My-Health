@@ -10,7 +10,7 @@ function pingUserController(req,res){
 
 async function getUsers(req,res,next){
     try{
-        const users = await DoctorService.getUsers();
+        const users = await userService.getUsers();
         return res.status(StatusCodes.OK).json({
             success : true,
             message: 'Successfully fetched all the users',

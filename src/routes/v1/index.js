@@ -8,6 +8,6 @@ const v1Router = express.Router();
 
 v1Router.use('/doctors',doctorRouter);
 v1Router.use('/users',userRouter);
-v1Router.use('/appointments',appointmentRouter);
+v1Router.use('/appointments',appointmentRouter);   // api/v1/appointments
 
 module.exports = v1Router;
